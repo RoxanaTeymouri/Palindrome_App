@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Icon
@@ -33,7 +35,6 @@ import com.example.palindromeapp.ui.theme.PalindromeAppTheme
 import com.example.palindromeapp.ui.screens.SavedScreen
 import com.example.palindromeapp.ui.screens.CheckScreen
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -68,8 +69,8 @@ fun PalindromeApp() {
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {
     val items = listOf(
-        BottomNavItem("check", "Check", Icons.Default.PlayArrow),
-        BottomNavItem("saved", "Saved", Icons.Default.Menu),
+        BottomNavItem("check", "Check", Icons.Default.Check),
+        BottomNavItem("saved", "Saved", Icons.Default.Favorite),
     )
 
     NavigationBar(
@@ -104,14 +105,10 @@ data class BottomNavItem(
 @Composable
 fun FastNavHost(navController: NavHostController) {
 
-
     NavHost(navController, startDestination = "saved") {
-
         composable("saved") { SavedScreen() }
         composable("check") { CheckScreen() }
-
     }
-
 }
 
 @Preview(showBackground = true)
