@@ -8,7 +8,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 
 class PalindromeDataStore(private val dataStore: DataStore<Preferences>) {
-    private val key = stringSetPreferencesKey("palindromes.preferences_pb")
+    private val key = stringSetPreferencesKey("palindromes")
 
     val savedPalindromes: Flow<Set<String>> = dataStore.data
         .map { it[key] ?: emptySet() }
