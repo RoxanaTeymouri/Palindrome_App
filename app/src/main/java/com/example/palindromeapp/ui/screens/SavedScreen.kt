@@ -7,11 +7,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -22,17 +20,20 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.palindromeapp.R
 
 
 @Composable
 fun SavedScreen(viewModel: PalindromeViewModel = hiltViewModel()) {
-    val palindromes by viewModel.palindromes.collectAsState()
+    val palindromes by viewModel.palindromes.collectAsStateWithLifecycle()
 
     if (palindromes.isEmpty()) {
         Box(
             modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center
         ) {
-            Text(text = "No saved palindromes yet!", style = MaterialTheme.typography.bodyMedium)
+            Text(text = stringResource(R.string.no_saved_palindromes_yet), style = MaterialTheme.typography.bodyMedium)
         }
     } else {
         LazyColumn(
@@ -48,7 +49,7 @@ fun SavedScreen(viewModel: PalindromeViewModel = hiltViewModel()) {
 }
 
 @Composable
-fun PalindromeItem(palindrome: String) {
+private fun PalindromeItem(palindrome: String) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(8.dp),

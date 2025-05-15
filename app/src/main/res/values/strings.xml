@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Palindrome App</string>
+    <string name="check">Check</string>
+    <string name="enter_a_word">Enter a word</string>
+    <string name="not_a_palindrome">❌ Not a palindrome</string>
+    <string name="it_s_a_palindrome">✅ It\'s a palindrome!</string>
+    <string name="no_saved_palindromes_yet">No saved palindromes yet!</string>
 </resources>

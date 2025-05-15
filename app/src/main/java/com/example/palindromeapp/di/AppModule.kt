@@ -7,8 +7,8 @@ import androidx.datastore.dataStoreFile
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.Preferences
 import com.example.palindromeapp.data.PalindromeDataStore
-import com.example.palindromeapp.data.PalindromeRepository
-import com.example.palindromeapp.data.PalindromeRepositoryInterface
+import com.example.palindromeapp.data.PalindromeRepositoryImpl
+import com.example.palindromeapp.domain.PalindromeRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -24,8 +24,8 @@ abstract class AppModule {
     @Binds
     @Singleton
     abstract fun bindPalindromeRepository(
-        repo: PalindromeRepository
-    ): PalindromeRepositoryInterface
+        repo: PalindromeRepositoryImpl
+    ): PalindromeRepository
 
     companion object {
         @Provides
