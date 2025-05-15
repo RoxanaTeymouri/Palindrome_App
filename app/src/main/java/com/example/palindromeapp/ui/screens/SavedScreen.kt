@@ -24,7 +24,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.palindromeapp.R
 
-
 @Composable
 fun SavedScreen(viewModel: PalindromeViewModel = hiltViewModel()) {
     val palindromes by viewModel.palindromes.collectAsStateWithLifecycle()

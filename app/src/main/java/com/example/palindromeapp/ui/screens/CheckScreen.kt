@@ -27,7 +27,6 @@ fun CheckScreen(viewModel: PalindromeViewModel = hiltViewModel()) {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-
         OutlinedTextField(
             value = word,
             onValueChange = { word = it },
@@ -35,7 +34,6 @@ fun CheckScreen(viewModel: PalindromeViewModel = hiltViewModel()) {
         Button(onClick = { viewModel.validateAndSave(word) }) {
             Text(stringResource(R.string.check))
         }
-
         viewModel.isPalindrome?.let {
             Text(if (it) stringResource(R.string.it_s_a_palindrome) else stringResource(R.string.not_a_palindrome))
         }

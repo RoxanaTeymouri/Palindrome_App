@@ -19,7 +19,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -28,7 +27,6 @@ import androidx.navigation.compose.rememberNavController
 import com.example.palindromeapp.ui.screens.SavedScreen
 import com.example.palindromeapp.ui.screens.CheckScreen
 import com.example.palindromeapp.ui.theme.PalindromeAppTheme
-import com.example.palindromeapp.viewmodel.PalindromeViewModel
 
 @Composable
 fun PalindromeApp() {
