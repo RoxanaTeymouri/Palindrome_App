@@ -60,21 +60,21 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // Compose
-    implementation("androidx.compose.ui:ui:1.5.0")
-    implementation("androidx.navigation:navigation-compose:2.6.0")
-    implementation("androidx.activity:activity-compose:1.7.0")
+    implementation("androidx.compose.ui:ui:1.8.1")
+    implementation("androidx.navigation:navigation-compose:2.9.0")
+    implementation(libs.androidx.activity.compose.v170)
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
+    implementation("com.google.dagger:hilt-android:2.56")
     kapt("com.google.dagger:hilt-compiler:2.56")
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     // ViewModel + Lifecycle
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.0")
 
     // DataStore
-    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("androidx.datastore:datastore-preferences:1.1.6")
 
     // Kotlin Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 }
