@@ -21,7 +21,10 @@ fun CheckScreen(viewModel: PalindromeViewModel = hiltViewModel()) {
 
     Column(Modifier.padding(16.dp)) {
 
-        OutlinedTextField(value = word, onValueChange = { word = it }, label = { Text("Enter a word") })
+        OutlinedTextField(
+            value = word,
+            onValueChange = { word = it },
+            label = { Text("Enter a word") })
         Button(onClick = { viewModel.checkWord(word) }) {
             Text("Check")
         }
